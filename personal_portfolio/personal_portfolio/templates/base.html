@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}My Personal Portfolio{% endblock title %}</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'personal_portfolio/style.css' %}">
+    <script src="{% static 'personal_portfolio/javascript.js' %}"></script>
+    <style>
+
+.containers {
+    background: url('{% static "personal_portfolio/background.gif" %}') repeat-y center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+    </style>
+</head>
+<body class="containers">
+    {% block page_content %}{% endblock page_content %}
+    </body>
+</html>

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block page_content %}
+
+
+<div class="hamburger" onclick="toggleMenu(this)" style="z-index: 4;">
+    <div class="bar1"></div>
+    <div class="bar2"></div>
+    <div class="bar3"></div>
+  </div>
+  
+  <!-- Create a side bar menu element with some links -->
+  <div class="sidebar" style='z-index: 3;'>
+    <a href="#" class="active">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+  </div>
+<header>    
+    <nav>
+        <button><a href="{% url 'contact' %}">About</a></button> 
+        <button><a href="">Services</a></button>
+        <button><a href="{% url 'portfolio'%}">portfolio</a></button> 
+    </nav>
+</header>
+<h1 style="color: white;font-family: 'Montserrat', sans-serif;font-weight: 3000;font-size: 55px;margin-left: 20px;margin-top: 55px;width: 40vw;line-height: 0.9;">Hi There<br>Welcome <br>to My page</h1>
+
+<img src="{% static 'personal_portfolio/a.png' %}" alt="my portfolio" class="my_picture" >
+<div class="bio-div" style="font-family: 'Montserrat'; font-weight: 750; font-size: 2vw; width: 29vw;">
+  My name is Gabriel Nii Attoh Quaye. A computer engineering student in KNUST. A full stack developer, Python developer, Proficient typist, and Microsoft office user and an AI and ML Enthusiast.
+</div>
+
+
+{% endblock page_content %}

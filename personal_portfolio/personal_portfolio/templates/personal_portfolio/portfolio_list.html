@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block page_content %}
+<div class="hamburger" onclick="toggleMenu(this)" style="z-index: 4;">
+    <div class="bar1"></div>
+    <div class="bar2"></div>
+    <div class="bar3"></div>
+  </div>
+  
+  <!-- Create a side bar menu element with some links -->
+  <div class="sidebar" style='z-index: 3;'>
+    <a href="#" class="active">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+  </div>
+<header>    
+    <nav>
+        <button><a href="{% url 'contact' %}">About</a></button> 
+        <button><a href="">Services</a></button>
+        <button><a href="{% url 'home' %}">Home</a></button> 
+    </nav>
+</header>    
+   
+<h1 style="color: white; line-height: 0.2;font-family: 'Montserrat', sans-serif;font-weight: 3000;font-size: 55px;margin-left: 20px;margin-top: 55px;position: fixed;">My Portfolio</h1>
+<div class="blocks">
+<a href="{% url 'project' %}"><div class="port" style="font-family: 'Montserrat';font-weight: 750; font-size: 29px;margin-left: 36.6vw;">Projects
+<img src="{% static 'personal_portfolio/8.png' %}" alt="project" style="width: 23vw; height: 51vh;">
+</div>
+</a>
+<a href="{% url 'experience' %}"><div class="port" style="font-family: 'Montserrat';font-weight: 750; font-size: 29px;right: 0;margin-right: 5vw;">Experience
+    <img src="{% static 'personal_portfolio/7.png' %}" alt="project" style="width: 23vw; height: 48vh;">
+</div>
+</a>
+<a href="{% url 'skills' %}"><div class="port" style="font-family: 'Montserrat';font-weight: 750; font-size: 29px;right: 0;left: 0;margin-left: 5vw;">Skills
+    <img src="{% static 'personal_portfolio/2.png' %}" alt="project" style="width: 23vw; height: 51vh;">
+
+</div>
+</a>
+</div>
+{% endblock page_content %}

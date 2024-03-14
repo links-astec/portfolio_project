@@ -1,0 +1,130 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'personal_portfolio/services.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300" rel="stylesheet">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: rgb(50, 88, 100);
+        }
+       
+.loginform{
+    padding: 20px;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.497);
+    width: 22vw;
+    text-align: center;
+    margin-left: 60vw;
+    height:70vh;
+    margin-top: 15vh;
+    position:absolute;
+    background: linear-gradient(to top, rgba(182, 182, 182, 0.5) 50%, rgba(182, 182, 182, 0.5) 50%); 
+}
+
+
+        input {
+            border-width: 0;
+            width: calc(100% - 50px);
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius:20px;
+            background-color: rgba(255, 255, 255, 0.723);
+            box-shadow: 0 0 10px rgba(0.5, 0, 0, 0.1);
+            margin-left: 0.3vw;
+        }
+        .main {
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.5) 50%), url('{% static "personal_portfolio/ee.jpg" %}');
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+       
+
+.header{
+    width: 100vw;
+    height: 10vh;
+    margin-top: 2vh;
+    box-shadow: 0 0 10px rgba(0.5, 0, 0, 0.1);
+    background: transparent;
+    position:absolute;
+
+}
+nav a {
+    color: rgb(0, 0, 0);
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--gap);
+    transition: transform 0.3s ease-in-out;
+    float: right;
+    border-radius: 15px;
+    background: transparent;    
+    width:33vw;
+    margin-top: 2vh;
+    margin-right: 1vw;
+}
+button{
+    border: none;
+    padding: 15px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgb(101, 149, 225);
+    transition: transform 0.3s ease-in-out;   
+    background-color: rgb(255, 255, 255);
+}
+button:hover{
+    background: rgb(129, 182, 255);
+    color: #ffffff;
+    transform: scale(1.05);    
+}
+
+    </style>
+</head>
+<body>
+   
+   <div class="main">
+    <header>
+        <!-- Create a side bar menu element with some links -->
+          <nav>
+              <button><a href="{% url 'home' %}">Home</a></button> 
+              <button><a href="{% url 'contact' %}">About</a></button>
+              <button><a href="{% url 'portfolio' %}">Portfolio</a></button> 
+          </nav>
+</header>
+    <img src="{% static 'personal_portfolio/45.png' %}" alt="" style="width: 9vw; height: 17vh; margin-left: 5vw; position: absolute; margin-top: 3vh;">
+    <h1 style="margin-top: 25vh;font-family: 'Montserrat',sans-serif;color: white;font-weight: 900;position:absolute;font-size: 50px;margin-left: 5vw;">Sign In <br> to Continue</h1>
+    <h3 style="margin-top: 50vh;font-family: 'Montserrat',sans-serif;color: white;font-weight: 900;position:absolute;font-size: 20px;margin-left: 5vw;">Don't have an account? <a href="{% url 'register' %}">Sign Up</a></h3>
+
+    <div class="loginform">
+        <form method="post" >
+            {% csrf_token %}
+            <h2 style="font-family: 'Montserrat',sans-serif;">Sign In</h2>
+            <input type="text" name="username" required placeholder="Username/Email">
+            <br><br>
+            <input type="password" name="password" required placeholder="Password">
+            <br><br>
+            <button type="submit">Login</button>
+            <br><br>
+               <span><hr></span>
+            
+            <h2 style="font-family: 'Montserrat',sans-serif;">New to LLO?</h2><br>
+        </form> 
+        <a href="{% url 'register' %}"><button>Create New Account</button></a>
+    </div>  
+   </div>
+    
+</body>
+</html>
